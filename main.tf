@@ -18,6 +18,11 @@
 	Cloud Function Definition with
 	Repo/Storage Build Source and Event Trigger
  *****************************************/
+
+terraform {
+  backend "gcs" {}
+}
+
 resource "google_cloudfunctions2_function" "function" {
   name        = var.function_name
   location    = var.function_location
