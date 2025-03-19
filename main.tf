@@ -28,7 +28,7 @@ resource "google_storage_bucket" "bucket" {
 resource "google_storage_bucket_object" "function-source" {
   name   = "sample_function_py.zip"
   bucket = google_storage_bucket.bucket.name
-  source = "../../helpers/sample_function_py.zip"
+  source = "${path.module}/helpers/sample_function_py.zip"
 }
 
 module "pubsub" {
