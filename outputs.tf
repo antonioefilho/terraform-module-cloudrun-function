@@ -1,5 +1,5 @@
 /**
- * Copyright 2022 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,25 @@
 
 output "function_uri" {
   description = "URI of the Cloud Function (Gen 2)"
-  value       = google_cloudfunctions2_function.function.service_config[0].uri
+  value       = module.cloud_functions2.function_uri
 }
 
 output "function_name" {
   description = "Name of the Cloud Function (Gen 2)"
-  value       = var.function_name
+  value       = module.cloud_functions2.function_name
+}
+
+output "function_location" {
+  description = "Location of the Cloud Function (Gen 2)"
+  value       = var.function_location
+}
+
+output "pubsub_topic" {
+  description = "Name of the PubSub Topic"
+  value       = module.pubsub.topic
+}
+
+output "project_id" {
+  value       = var.project_id
+  description = "The project ID"
 }
