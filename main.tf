@@ -44,7 +44,7 @@ module "cloud_functions2" {
   version = "~> 0.5"
 
   project_id        = var.project_id
-  function_name     = "function2-pubsub-trigger-py"
+  function_name     = "helloworld-pubsub-trigger-py"
   function_location = var.function_location
   runtime           = "python38"
   entrypoint        = "hello_http"
