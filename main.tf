@@ -23,6 +23,8 @@ resource "google_storage_bucket" "bucket" {
   location                    = "US"
   uniform_bucket_level_access = true
   project                     = var.project_id
+
+  force_destroy = true
 }
 
 resource "google_storage_bucket_object" "function-source" {
